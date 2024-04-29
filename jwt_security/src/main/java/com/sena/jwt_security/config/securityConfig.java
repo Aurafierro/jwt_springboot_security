@@ -38,7 +38,7 @@ public class securityConfig {
 				  */
 				 .requestMatchers("/api/v1/public/**")
 				 .permitAll()
-				 .anyRequest().authenticated()
+				 .anyRequest().permitAll()
 				 ).build();
 	}
 
