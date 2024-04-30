@@ -10,10 +10,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+//get and set
 @Data
+//consultorr
 @Builder
+//constructor sin argumento o vacio
 @NoArgsConstructor
+//constructor sin argumentos
 @AllArgsConstructor
 @Entity
 
@@ -52,12 +55,14 @@ public class userRegistro {
 	@Column(name="rol", nullable= false, length = 100)
 	private rol  rol;
 
+	
 	public userRegistro() {
 		super();
 	}
 
 	public userRegistro(String id_user, String tipo_documento, String numero_documento, String nombre_completo,
-			String telefono, String correo, String contrasena, String confirmar_contrasena, String rol) {
+			String telefono, String correo, String contrasena, String confirmar_contrasena,
+			com.sena.jwt_security.models.rol rol) {
 		super();
 		this.id_user = id_user;
 		this.tipo_documento = tipo_documento;
@@ -134,14 +139,13 @@ public class userRegistro {
 		this.confirmar_contrasena = confirmar_contrasena;
 	}
 
-	public String getRol() {
+	public rol getRol() {
 		return rol;
 	}
 
-	public void setRol(String rol) {
+	public void setRol(rol rol) {
 		this.rol = rol;
 	}
 
 	
-
 }
